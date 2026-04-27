@@ -1,0 +1,114 @@
+@let result = userAnswers();
+
+@if (result !== null) {
+	@let questionsCount = questions().length;
+
+	<h1 class="result-testName">{{ testName() }}</h1>
+	<nz-divider class="result-divider" />
+	<h2 class="result-title">Результаты тестирования</h2>
+
+	<div class="result-questions-count">
+		Всего вопросов: <span>{{ questionsCount }}</span>
+	</div>
+	<div class="result-user-answer-count">
+		Отвечено на <span>{{ userCountAnswers() }}</span> из <span>{{ questionsCount }}</span> вопросов
+	</div>
+	<div class="result-user-answer-score">
+		Вы набрали: <span>{{ myScore() }}</span> из <span>{{ questionsCount }}</span> баллов
+		<span>({{ (myScore() / questionsCount) * 100 | number }}%)</span>
+	</div>
+
+	<button class="result-toQuiz-button" nz-button type="button" (click)="toQuiz()">К тестировнию</button>
+
+	<button class="result-finish-button" nz-button nzType="primary" type="button" (click)="finishQuiz()">
+		Завершить тестирование
+	</button>
+
+	<div class="result-table">
+		@let config = tableConfig();
+
+		<nz-table
+			#resultTable
+			nzSize="small"
+			[nzBordered]="true"
+			[nzOuterBordered]="true"
+			[nzPageIndex]="1"
+			[nzPageSize]="50"
+			[nzShowSizeChanger]="true"
+			[nzPageSizeOptions]="[50, 100, 150, 200]"
+			[nzData]="tableData()"
+		>
+			<thead>
+				<tr>
+					@for (column of config; track column) {
+						<th
+							[nzWidth]="column.width ? column.width + 'px' : null"
+							[nzColumnKey]="column.dataProperty"
+							[nzShowSort]="column.showSort ?? false"
+							[nzSortPriority]="column.sortPriority ?? false"
+							[nzSortOrder]="column.sortOrder ?? null"
+							[nzSortDirections]="column.sortDirections ?? [null, 'ascend', 'descend']"
+							[nzSortFn]="column.sortFn ?? null"
+							[nzShowFilter]="column.showFilter ?? false"
+							[nzFilterMultiple]="column.filterMultiple ?? false"
+							[nzFilters]="column.filters ?? []"
+							[nzFilterFn]="column.filterFn ?? null"
+							[nzAlign]="column.align ?? 'left'"
+						>
+							{{ column.name }}
+						</th>
+					}
+				</tr>
+			</thead>
+			<tbody>
+				@for (data of resultTable.data; track $index) {
+					<tr>
+						@for (column of config; track column.dataProperty) {
+							<td [nzAlign]="column.align ?? 'left'">
+								@switch (column.cellType) {
+									@case ('action') {
+										@if (isTablet()) {
+											<button
+												nz-button
+												nzType="primary"
+												nzSize="small"
+												type="button"
+												(click)="showQuestion(data)"
+											>
+												<nz-icon nzType="eye" nzTheme="outline" />
+											</button>
+										} @else {
+											<button
+												nz-button
+												nzType="primary"
+												nzSize="small"
+												type="button"
+												(click)="showQuestion(data)"
+											>
+												<nz-icon nzType="eye" nzTheme="outline" />
+												Просмотреть вопрос
+											</button>
+										}
+									}
+									@default {
+										@if (column.dataProperty) {
+											@if (column.customFormatter) {
+												@let value = column.customFormatter(data);
+
+												{{ value }}
+											} @else {
+												@let value = data[column.dataProperty] ?? '-';
+
+												{{ value }}
+											}
+										}
+									}
+								}
+							</td>
+						}
+					</tr>
+				}
+			</tbody>
+		</nz-table>
+	</div>
+}

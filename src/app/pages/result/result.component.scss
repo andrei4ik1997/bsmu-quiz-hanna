@@ -1,0 +1,41 @@
+@use 'mixins';
+
+:host {
+	@include mixins.flex-column();
+	@include mixins.size(100%);
+}
+
+.result {
+	&-title {
+	}
+
+	&-divider {
+		margin: 0.5rem 0;
+	}
+
+	&-testName {
+		line-height: 2rem;
+	}
+
+	&-questions-count,
+	&-user-answer-count,
+	&-user-answer-score {
+		@include mixins.flex-row(0.5rem);
+
+		font-size: 1rem;
+
+		span {
+			font-weight: bold;
+		}
+	}
+
+	&-toQuiz-button,
+	&-finish-button {
+		margin-top: 1rem;
+	}
+
+	&-table {
+		height: 100%;
+		margin-top: 2rem;
+	}
+}

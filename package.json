@@ -1,0 +1,61 @@
+{
+	"name": "bsmu-quiz",
+	"version": "1.0.0",
+	"scripts": {
+		"ng": "ng",
+		"start-develop": "ng serve --configuration='development'",
+		"start-production": "ng serve --configuration='production'",
+		"build-develop": "ng build --configuration='development'",
+		"build-production": "ng build --configuration='production'",
+		"prettier": "npx prettier . --write",
+		"lint": "ng lint --fix",
+		"find-circular-dependencies": "npx madge -c --extensions ts ./",
+		"deploy": "ng deploy"
+	},
+	"private": true,
+	"engines": {
+		"node": "24.7.0"
+	},
+	"dependencies": {
+		"@angular/cdk": "21.2.8",
+		"@angular/common": "21.2.10",
+		"@angular/compiler": "21.2.10",
+		"@angular/core": "21.2.10",
+		"@angular/forms": "21.2.10",
+		"@angular/platform-browser": "21.2.10",
+		"@angular/router": "21.2.10",
+		"@angular/service-worker": "21.2.10",
+		"@ant-design/icons-angular": "21.0.0",
+		"ng-zorro-antd": "21.2.2",
+		"rxjs": "7.8.2",
+		"tslib": "2.8.1"
+	},
+	"devDependencies": {
+		"@angular-devkit/core": "21.2.8",
+		"@angular-devkit/schematics": "21.2.8",
+		"@angular-eslint/builder": "21.3.1",
+		"@angular/build": "21.2.8",
+		"@angular/cli": "21.2.8",
+		"@angular/compiler-cli": "21.2.10",
+		"@eslint-community/eslint-plugin-eslint-comments": "4.7.1",
+		"@eslint/js": "10.0.1",
+		"@schematics/angular": "21.2.8",
+		"@stylistic/eslint-plugin": "5.10.0",
+		"@typescript-eslint/parser": "8.59.0",
+		"angular-cli-ghpages": "3.0.3",
+		"angular-eslint": "21.3.1",
+		"eslint": "10.2.1",
+		"eslint-config-prettier": "10.1.8",
+		"eslint-plugin-prettier": "5.5.5",
+		"eslint-plugin-promise": "7.3.0",
+		"eslint-plugin-simple-import-sort": "13.0.0",
+		"eslint-plugin-sonarjs": "4.0.3",
+		"eslint-plugin-unicorn": "64.0.0",
+		"globals": "17.5.0",
+		"parse5": "8.0.1",
+		"prettier": "3.8.3",
+		"prettier-plugin-organize-attributes": "1.0.0",
+		"typescript": "5.9.3",
+		"typescript-eslint": "8.59.0"
+	}
+}

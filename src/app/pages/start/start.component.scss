@@ -1,0 +1,21 @@
+@use 'mixins';
+
+:host {
+	@include mixins.flex-column();
+	@include mixins.size(100%);
+}
+
+::ng-deep {
+	.ant-select-item-option-content {
+		white-space: normal !important;
+		text-overflow: initial !important;
+	}
+}
+
+.title {
+	text-align: center;
+}
+
+.chose-test {
+	@include mixins.flex-column(1rem);
+}
