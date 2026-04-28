@@ -1759,7 +1759,7 @@ export const COMMON_2025_QUESTIONS: Question[] = [
 			{
 				id: 0,
 				value: 'Законом',
-				isCorrect: true,
+				isCorrect: false,
 			},
 			{
 				id: 1,
@@ -1774,7 +1774,7 @@ export const COMMON_2025_QUESTIONS: Question[] = [
 			{
 				id: 3,
 				value: 'Конституцией',
-				isCorrect: true,
+				isCorrect: false,
 			},
 		],
 		isMultiple: false,
@@ -2588,7 +2588,7 @@ export const COMMON_2025_QUESTIONS: Question[] = [
 			{
 				id: 1,
 				value: 'да',
-				isCorrect: true,
+				isCorrect: false,
 			},
 			{
 				id: 2,
@@ -3225,12 +3225,12 @@ export const COMMON_2025_QUESTIONS: Question[] = [
 			{
 				id: 2,
 				value: 'постановлением Минфина',
-				isCorrect: true,
+				isCorrect: false,
 			},
 			{
 				id: 3,
 				value: 'постановлением Минздрава',
-				isCorrect: true,
+				isCorrect: false,
 			},
 		],
 		isMultiple: false,
@@ -7259,7 +7259,7 @@ export const COMMON_2025_QUESTIONS: Question[] = [
 			{
 				id: 1,
 				value: 'Допускается',
-				isCorrect: true,
+				isCorrect: false,
 			},
 			{
 				id: 2,

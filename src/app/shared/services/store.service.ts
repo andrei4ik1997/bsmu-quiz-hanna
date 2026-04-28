@@ -1,4 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable, isDevMode, signal } from '@angular/core';
 import { COMMON_07_01_2026_QUESTIONS } from '@shared/db/common-07-01-2026.questions';
 import { COMMON_2025_QUESTIONS } from '@shared/db/common-2025.questions';
 import { nurseAnesthetistQuestions } from '@shared/db/nurse-anesthetist.questions';
@@ -21,6 +21,34 @@ export class StoreService {
 	public readonly testQuestions = this.testQuestionsStore.asReadonly();
 	public readonly testResults = this.testResultsStore.asReadonly();
 	public readonly currentQuestionIndex = this.currentQuestionIndexStore.asReadonly();
+
+	constructor() {
+		if (isDevMode()) {
+			this.checkDb();
+		}
+	}
+
+	private checkDb(): void {
+		const dbs = [COMMON_07_01_2026_QUESTIONS, COMMON_2025_QUESTIONS, nurseAnesthetistQuestions];
+
+		dbs.forEach((db) => {
+			const result = db
+				.filter((question) => {
+					return !question.isMultiple;
+				})
+				.filter((question) => {
+					const correctAnswers = question.answers.filter((answer) => {
+						return answer.isCorrect;
+					});
+
+					return correctAnswers.length > 1;
+				});
+
+			if (result.length > 0) {
+				console.warn('Есть ошибки в db', result);
+			}
+		});
+	}
 
 	public setSelectedTest(test: Nulled<TestOption>): void {
 		this.selectedTestStore.set(test);

@@ -3160,7 +3160,7 @@ export const nurseAnesthetistQuestions: Question[] = [
 			{
 				id: 1,
 				value: 'грудной',
-				isCorrect: true,
+				isCorrect: false,
 			},
 			{
 				id: 2,
@@ -4839,7 +4839,7 @@ export const nurseAnesthetistQuestions: Question[] = [
 			{
 				id: 1,
 				value: 'эуфиллин',
-				isCorrect: true,
+				isCorrect: false,
 			},
 			{
 				id: 2,
@@ -5445,7 +5445,7 @@ export const nurseAnesthetistQuestions: Question[] = [
 			{
 				id: 2,
 				value: 'закрытого',
-				isCorrect: true,
+				isCorrect: false,
 			},
 			{
 				id: 3,
@@ -5530,7 +5530,7 @@ export const nurseAnesthetistQuestions: Question[] = [
 			{
 				id: 2,
 				value: 'открытому контуру',
-				isCorrect: true,
+				isCorrect: false,
 			},
 			{
 				id: 3,
@@ -8377,12 +8377,12 @@ export const nurseAnesthetistQuestions: Question[] = [
 			{
 				id: 1,
 				value: 'стандартных сывороток',
-				isCorrect: true,
+				isCorrect: false,
 			},
 			{
 				id: 2,
 				value: 'стандартных эритроцитов',
-				isCorrect: true,
+				isCorrect: false,
 			},
 			{
 				id: 3,
@@ -8434,7 +8434,7 @@ export const nurseAnesthetistQuestions: Question[] = [
 			{
 				id: 1,
 				value: 'столько, сколько требуется',
-				isCorrect: true,
+				isCorrect: false,
 			},
 			{
 				id: 2,
@@ -12440,7 +12440,7 @@ export const nurseAnesthetistQuestions: Question[] = [
 			{
 				id: 1,
 				value: 'источника инфекции',
-				isCorrect: true,
+				isCorrect: false,
 			},
 			{
 				id: 2,
@@ -14567,7 +14567,7 @@ export const nurseAnesthetistQuestions: Question[] = [
 			{
 				id: 3,
 				value: 'закрытый',
-				isCorrect: true,
+				isCorrect: false,
 			},
 		],
 		isMultiple: false,
