@@ -10,7 +10,8 @@
 		"prettier": "npx prettier . --write",
 		"lint": "ng lint --fix",
 		"find-circular-dependencies": "npx madge -c --extensions ts ./",
-		"deploy": "ng deploy"
+		"deploy": "ng deploy",
+		"deploy_comment": "fix issue with deploy https://github.com/hakimio/ngx-ui-tour/blob/master/patches/gh-pages%406.3.0.patch"
 	},
 	"private": true,
 	"engines": {
